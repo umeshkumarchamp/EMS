@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import com.ems.dao.DepartmentDao;
 import com.ems.dao.EmployeeDao;
+import com.ems.dao.GuestDao;
 import com.ems.dao.ProjectDao;
 
 public class Menu {
@@ -119,6 +120,7 @@ public class Menu {
 					break; 
 					
 					case 10: System.exit(0);
+					break; 
 				}
 			}while(choice !=10);
 		}
@@ -130,7 +132,8 @@ public class Menu {
 			do {
 				System.out.println("<============= Guest Menu =============> ");
 
-				System.out.println("1. View All Department \n2. View All Employees \n3. View All Projects \n4. Exit\n");
+				System.out.println("1. View All Department \n2. View Department By Id \n3. View All Employees \n4. "
+						+ "View Employee By Id \n5. View All Projects \n6. View Project By Id  \n7. Exit\n");
 				System.out.print("Enter Your Choice : ");
 				choice = sc.nextInt();
 				
@@ -138,15 +141,25 @@ public class Menu {
 					case 1 : DepartmentDao.getDepartmentList();
 					break; 
 					
-					case 2 : EmployeeDao.getEmployeeList();
+					case 2 : GuestDao.getDepartmentById();
+					break; 
+						
+					case 3 : EmployeeDao.getEmployeeList();
 					break; 
 					
-					case 3 : ProjectDao.getProjectList();
+					case 4 : GuestDao.getEmployeeById();
+					break;
+					
+					case 5 : ProjectDao.getProjectList();
 					break; 
 					
-					case 4: System.exit(0);
+					case 6 : GuestDao.getProjectById();
+					break; 
+					
+					case 7: System.exit(0);
+					break; 
 				}
-			}while(choice !=4);
+			}while(choice !=7);
 
 
 		}
